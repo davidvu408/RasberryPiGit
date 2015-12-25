@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -9,14 +8,14 @@
 	<body>
 	<?php
 
-	//Sets GPIO pins to output pins and ..."Read values"
+	//Sets pins to GPIO pins and stores values in array val_array
 	$val_array = array(0,0,0);
 	for($i = 0; $i < 3; $i++) {
 	system("gpio mode ".$i." out");
 	exec("gpio read ".$i, $val_array[$i], $return);
 	}
 
-	//Initializes button images and displays thm
+	//Initializes button images and displays them
 	for($i = 0; $i < 3; $i++) {
 		//if off
 		if($val_array[$i][0] == 0) {

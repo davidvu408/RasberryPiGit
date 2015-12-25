@@ -4,19 +4,15 @@ var_button2 = document.getElementById("button_2");
 
 var Buttons = [ button_0, button_1, button_2];
 
+//Function is invoked when button images on the web page are clicked
 function change_pin( pic ) {
 	var request = new XMLHttpRequest();
 	request.open( "GET", "gpio.php?pic=" + pic, true);
 	request.send(null);
 
-//window.alert(request.responseText);
-
 	request.onreadystatechange = function ()  {
 	var data = request.responseText;
-
 	if( request.readyState == 4 && request.status  == 200 ) {
-//window.alert("yee-haw");
-
 	switch ( data ) {
 		case "0":
 			Buttons[pic].src = "imgs/red/red_"+pic+".jpg";
@@ -33,7 +29,6 @@ function change_pin( pic ) {
 		} // end switch statement
 
 	} // end if statement
-
 	} // end function
 
 request.send(null);

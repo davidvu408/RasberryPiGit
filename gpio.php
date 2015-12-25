@@ -1,4 +1,6 @@
 <?php
+
+//Recieves the value indicating which pin to turn on/off and stores the value in an array $status
 if( isset( $_GET["pic"])) {
 	$pic = strip_tags ($_GET["pic"]);
 	if( (is_numeric($pic)) && ($pic >= 0) && ($pic <= 2) ) {
